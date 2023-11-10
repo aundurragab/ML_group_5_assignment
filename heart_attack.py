@@ -1,10 +1,11 @@
 import streamlit as st
 import pickle
+import joblib
 
 def heart_attack():
     # Your existing code for the heart attack prediction app
     with open('model.pkl', 'rb') as f:
-        classifier = pickle.load(f)
+        classifier = joblib.load(f)
 
     def prediction(PhysicalHealthDays, GeneralHealth, RemovedTeeth, HadAngina, HadStroke, HadCOPD, HadKidneyDisease, HadArthritis, HadDiabetes, DeafOrHardOfHearing,
                    DifficultyWalking, SmokerStatus, ChestScan, AgeCategory, PneumoVaxEver):
