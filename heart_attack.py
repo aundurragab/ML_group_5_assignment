@@ -4,7 +4,7 @@ import joblib
 
 def heart_attack():
     # Your existing code for the heart attack prediction app
-    with open('model.pkl', 'rb') as f:
+    with open('model.sav', 'rb') as f:
         classifier = joblib.load(f)
 
     def prediction(PhysicalHealthDays, GeneralHealth, RemovedTeeth, HadAngina, HadStroke, HadCOPD, HadKidneyDisease, HadArthritis, HadDiabetes, DeafOrHardOfHearing,
