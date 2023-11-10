@@ -1,11 +1,17 @@
-import streamlit as st
+import streamlit as st 
+import numpy as np 
+import matplotlib.pyplot as plt
 import pickle
-import joblib
+from PIL import Image
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
+from PIL import Image
+from joblib import load
 
 def heart_attack():
     # Your existing code for the heart attack prediction app
-    with open('model.sav', 'rb') as f:
-        classifier = joblib.load(f)
+    with open('model.pkl', 'rb') as f:
+        classifier = pickle.load(f)
 
     def prediction(PhysicalHealthDays, GeneralHealth, RemovedTeeth, HadAngina, HadStroke, HadCOPD, HadKidneyDisease, HadArthritis, HadDiabetes, DeafOrHardOfHearing,
                    DifficultyWalking, SmokerStatus, ChestScan, AgeCategory, PneumoVaxEver):
